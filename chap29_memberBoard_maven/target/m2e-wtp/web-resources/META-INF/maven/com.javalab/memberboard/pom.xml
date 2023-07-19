@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- 1. 프로젝트에 관한 사항 -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.javalab</groupId>
+  <artifactId>memberboard</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- 2. 의존성(디펜던시, 라이브러리) 기록 문서 -->
+  <dependencies>
+  
+  	<!-- jstl 라이브러리 -->
+	<dependency>
+    	<groupId>jstl</groupId>
+    	<artifactId>jstl</artifactId>
+    	<version>1.2</version>
+	</dependency>
+	
+	<!-- taglibs 라이브러리 -->
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	    <version>1.1.2</version>
+	</dependency>
+	
+	<!-- 오라클 JDBC 드라이버 -->
+	<dependency>
+		<groupId>com.oracle.ojdbc</groupId>
+		<artifactId>ojdbc8</artifactId>
+		<version>19.3.0.0</version>
+	</dependency>
+
+	<!-- 오라클 JDBC 국제화 드라이버 -->	
+	<dependency>
+		<groupId>com.oracle.ojdbc</groupId>
+		<artifactId>orai18n</artifactId>
+		<version>19.3.0.0</version>
+	</dependency>
+	
+	<!-- 롬복 라이브러리 -->
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.26</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- 구글 gson 라이브러리-->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.10.1</version>
+	</dependency>
+	
+	<!-- JSON 관련 라이브러리 -->
+	<dependency>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	
+	<!-- 톰캣에서 제공하는 커넥션 풀 라이브러리 -->
+	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-dbcp</artifactId>
+	    <version>10.1.8</version>
+	</dependency>
+	
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
