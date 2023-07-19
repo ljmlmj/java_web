@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>jQuery Event Examples</title>
+   <style>
+      body{
+         font-size: 1.5em;   /*  1.5em = 24px; */
+      }
+      .mouseout{
+         background-color: red;
+         width: 200px; 
+         height: 200px; 
+      }
+      .mouseover{
+         background-color: blue;
+         width: 200px; 
+         height: 200px; 
+      }
+   </style>
+   
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+      $(document).ready(function() {
+
+         // mouseout() 마우스가 올라왔다 떠날때 이벤트
+         $("#div-mouseout").on('mouseout', function() {
+            alert("div-mouseout 공간에서 마우스 나감");
+         });
+
+         // mouseover() 마우스가 올라올때 이벤트
+         $("#div-mouseover").on('mouseover', function() {
+            alert("div-mouseover 공간에 마우스 들어옴");
+         });
+
+      });
+   </script>
+</head>
+<body>
+   
+   <div id="div-mouseout" class="mouseout"></div>
+   <div id="div-mouseover" class="mouseover"></div>
+
+</body>
+</html>

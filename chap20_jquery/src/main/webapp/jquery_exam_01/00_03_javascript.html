@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>순수 자바스크립트</title>
+<!-- head 섹션의 style 섹션에 정의된 모든 CSS 규칙은 
+	엘리먼트가 아직 생성되지 않았더라도 body 섹션의 요소에 적용됩니다. -->
+<style>
+#abc2 {
+	color: red;
+}
+</style>
+
+<!-- 
+	[ $() gkatn & ready() 함수]
+	
+	보통 개발자들은 <head> 섹션에 자바스크립트를 선언하고 싶어함.
+	하지만 그렇게 되면 javascript의 코드가 <body>의 요소들이
+	렌더링 즉, DOM의 요소들(객체)로 만들어지기 전에 실행되기 때문에
+	각 요소들의 값을 가져올 수도 없고 스타일을 적용할 수도 없게 됨.
+	그래서 jQeury의 $()의 ready() 함수를 사용해서 모든 DOM 요소들이
+	완전하게 만들어진 후에 바로 어떤 행동이 실행되도록 할 때 사용함.
+	
+	만약 html page가 로드되고 난 후에 버튼을 클릭했을 때 이벤트 처리를
+	담당할 함수를 만들 때는 ready() 함수 안에 넣으면 안됨.
+	html에서 onclick="fn checkForm" 형태로 호출할 수 있는
+	함수는 전역함수여야 하기 때문인다.
+	
+	jQeury의 $() 함수는 엄밀히 말해 선택자가 아닙니다. 이것은 실제로
+	DOM에서 요소를 선택ㄱ하는 것 외에도 많은 작업을 수행하는 데 사용할 수 있는
+	다목적 유틸리티 함수인 jQuery() 함수의 줄임말임.
+	
+	실제로 $() 함수는 DOM에서 요소를 선택하기 위해 선택기와 함께 자주 사용됩니다.
+	예를 들어 $('p')는 페이지의 모든 p 요소를 선택합니다.
+	그래서 어떻게 보면 $() 함수는 선택자로 생각될 수 있지만 더 정확하게는
+	다양한 작업을 수행할 수 있는 유틸리티 함수로 설명됨.
+	-->
+
+<!-- 1. jQuery 라이브러리 import -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	/* jQuery 팩토리 함수, $() 함수 사용
+	모든 요소들이 렌더링 되고 난 후에 ready() 함수가 실행되므로
+	렌더링된 요소에 접근 가능하게 됨. */
+	$(document).ready(function() {
+		// id가 "abc"인 요소를 찾아서 style color 적용
+		let paragraph = document.getElementById("abc");
+		paragraph.style.color = "blue";
+
+		// input 값을 가져와서 얼럿 띄워줌
+		let language = document.getElementById("lang").value;
+		alert(language);
+	});
+</script>
+</head>
+<body>
+	<p id="abc">1. 나는 파란색 color가 적용되어 있다.</p>
+	<input type="text" id="lang" name="lang" value="한글">
+
+	<p id="abc2">2. 나는 빨간색 color가 적용되어 있다.</p>
+</body>
+</html>

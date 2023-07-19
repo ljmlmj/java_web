@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리로 엘리먼트의 값 조회</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		// button tage에 이벤트 핸들러 설정
+		$("#btn").on('click', function() {
+			// 화면에 입력한 값 추출
+			var id = $("#id").val();
+			console.log('id값 : ', id);
+			// 화면에서 추출한 값을 다시 다른 엘리먼트에 할당
+			$("#t_output").val(id);
+		});
+	});
+	
+
+</script>
+
+</head>
+<body>
+	<h2>값 조회 : $('셀렉터').val() / 값 할당 $('셀렉터').val() 함수</h2>
+	<input type="text" id="id">
+	<input type="button" value="입력하기" id="btn"><br>
+	<br>
+	<div>
+		결과:<br>
+		<input type="text" id="t_output" readonly>
+	</div>
+		
+</body>
+</html>

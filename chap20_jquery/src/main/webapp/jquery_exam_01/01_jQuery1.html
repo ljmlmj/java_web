@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- <html> 태그의 xmlns 속성은 해당 문서를 위한 XML
+네임스페이스(namespace) 명시(선택사항) -->
+<html> <!-- 코딩 금지 xmlns="http://www.w3.org/1999/xhtml" -->
+<head>
+<meta charset="UTF-8">
+<title>ID 셀렉터 연습1</title>
+<!-- jQuery 라이브러리 import -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	/*
+		ready() 함수:
+			html의 모든 요소(element)가 렌더링되고 난 후에
+			실행되는 함수로 화면의 전체 요소가 렌더링되고 바로 직 후에 실행된다.
+	*/
+	$(domument).ready(function(){
+		// jquery 선택자를 통해서 class 속성이 class1이라는 요소의 html 값을 갖고 옴.
+		let class1 = $('.class1').html();
+		alert(class1);
+		
+		let unique1 = $('#unique1').html();
+		alert(unique1);
+		
+		// 태그를 포함해서 전체 값을 갖고 옴.
+		// 자식이 태그를 갖고 있으면 태그조차도 갖고 옴.
+		let unique2 = $('#unique2').html();
+		console.log('unique2', unique2);
+	});
+</script>
+</head>
+<body>
+	<div class="class1">안녕하세요.</div>
+	<div id="unique1">제이쿼리입니다.</div>
+	<div id="unique2"><p>제이쿼리는 아주 쉽습니다.</p></div>
+</body>
+</html>

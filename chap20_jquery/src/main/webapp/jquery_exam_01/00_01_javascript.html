@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>순수 자바스크립트</title>
+<style>
+
+</style>
+</head>
+<body>
+	<p id="abc">1. 나는 파란색 color가 적용되어 있다.</p>
+	<input type="text" id="lang" name="lang" value="한글" />
+	
+	<!-- 모든 요소들이 렌더링 되고 난 후에 자바스크립트 실행 -->
+	<script type="text/javascript">
+	// id가 "abc"인 요소의 참조 주소 얻기
+	let paragraph = document.getElementById("abc");
+	// id가 "abc"인 요소에 스타일 적용
+	paragraph.style.color = "blue";
+	
+	// input 값을 가져와서 얼럿 띄워줌.
+	let language = document.getElementById("lang").value;
+	alert(language);
+	</script>
+</body>
+</html>

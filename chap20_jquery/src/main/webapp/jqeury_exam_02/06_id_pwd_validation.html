@@ -1,0 +1,88 @@
+[06_id_pwd_validation.html]
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>암호확인 기능 구현하기</title>
+   <style type="text/css">
+      table{ 
+         border: 1px solid skyblue;
+      }
+      #divError{
+         color: red;
+      }   
+   </style>
+   
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function() {
+          // pwdConfirm의 값이 변경될때 발생하는 이벤트
+          // pwd와 pwdConfirm의 값 비교함.
+         $('#pwdConfirm').on('change', function() {
+             var pwd = $('#pwd').val();
+             
+             // $(this) : id="pwdConfirm" 요소의 주소(비밀번호 확인)
+             var pwdConfirm = $(this).val();
+         
+             if (pwd !== pwdConfirm) {
+                 $('#divError').html('암호가 일치하지 않습니다.');
+             } else {
+                 $('#divError').html('');
+             }
+         });
+          
+         // 전송버튼 클릭 이벤트
+         $('#btnSubmit').on('click', function() {
+             // 입력값 추출
+             var id = $('#id').val();
+             var pwd = $('#pwd').val();
+             var pwdConfirm = $('#pwdConfirm').val();
+         
+             // ID, PWD 검증
+             if (id == '') {
+               $('#divError').text('ID를 입력해주세요.');
+               $('#divError').addClass('color', 'red');
+               return false;
+             }
+             if (pwd == '') {
+               $('#divError').text('암호를 입력해주세요.');
+               $('#divError').addClass('color', 'red');
+               return false;
+             }         
+             // 비밀번호 & 비밀번호 확인 값이 다를 경우
+             if (pwd != pwdConfirm) {
+               $('#divError').text('암호와 암호확인 필드의 값이 일치하지 않습니다.');
+               return false;
+             }         
+             // 모든 값 검증 완료시 submit
+             alert('모든 값이 정상적으로 입력되어 submit합니다.');
+             $('form').submit();
+             
+           }); // end 전송버튼 클릭 이벤트
+         
+         }); // end ready
+
+    </script>
+</head>
+<body>
+   <form action="">
+      <table>
+         <tr>
+            <td>id :</td>
+            <td><input type="text" id="id" size="20" /></td>
+         </tr>
+         <tr>
+            <td>암호(pwd) :</td>
+            <td><input type="password" id="pwd" size="20" /></td>
+         </tr>
+         <tr>
+            <td>암호확인(confirm) :</td>
+            <td><input type="password" id="pwdConfirm" size="20" /></td>
+         </tr>
+      </table>
+      <button type="button" id="btnSubmit">전송</button>
+   </form>
+   <div id="divError"></div>
+</body>
+</html>

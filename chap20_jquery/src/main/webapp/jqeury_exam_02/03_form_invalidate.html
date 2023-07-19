@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 다양한 선택자 예제</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// submit 버튼 클릭 이벤트 핸들러
+		$('#btnSubmit').on('click', function(){
+			alert("You clicked the submit button");
+			
+			// 1. 체크박스 값 체크
+			let isChecked = $("#checkbox").prop("checked");
+			alert('체크박스 체크여부 확인 : ' + isChecked);
+			
+			// 2. 콤보박스 값 체크
+			let comboSelectedVal = $("#favorites option:selected").val();
+			alert('콤보 박스 선택된 값(value) : ' + comboSelectedVal);
+			
+			// 3. radio 버튼 값 체크
+			let radioSelectedValue = $('input[name="radio"]:checked').val();
+			alert('radio 버튼 선택된 값(value) : ' + radioSelectedValue);
+			
+			// 4. input type="text"
+			let txtName = $('#txtName').val();
+			alert('입력한 값은 : ' + txtName);
+		});
+	});
+	
+	
+</script>
+
+</head>
+<body>
+<h2>[프로그램 개발 중 가장 많이 사용]<br>
+	Html form input Element(요소) 값 검증</h2>
+	<br>
+	<label for="checkbox">Check me</label>
+	<input type="checkbox" id="checkbox"><br>
+	<br>
+	<label for="favorites">Select favorites</label>
+	<select id="favorites">
+		<option value="1">벤츠</option>
+		<option value="2">제네시스</option>
+		<option value="3">BMW</option>
+	</select><br>
+	<br>
+   	<label for="radio1">Radio button 1</label>
+   	<input type="radio" name="radio" value="1" id="radio1" checked>
+   	<br>
+   	<label for="radio2">Radio button 2</label>
+   	<input type="radio" name="radio" value="2" id="radio2"><br>
+   	<br>
+   	<input type="text" id="txtName" placeholder="Type something here"><br>
+   	<br>
+   	<button type="submit" id="btnSubmit">전송</button>
+   	
+
+</body>
+</html>

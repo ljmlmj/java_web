@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery 선택자</title>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <style type="text/css">
+      .ycss {
+         background-color: yellow;
+      }
+      .scss {
+         background-color: skyblue;
+      }
+   </style>
+
+   <script type="text/javascript">
+         
+           $(document).ready(function() {
+            
+              // jquery 선택자 1 $('선택자') <-- 선호
+              $("#servlet").on("click", function() {
+               // 현재 이벤트가 발생한 Html 엘리먼트에 ycss style 적용
+               $(this).addClass("ycss"); }
+            );
+                
+              // jquery 선택자 2 jQuery('선택자')
+            jQuery('#jquery').on('click', function(){
+               // 현재 이벤트가 발생한 Html 엘리먼트에 ycss style 적용
+               $(this).addClass("scss"); 
+            });
+
+         }); // end ready
+   </script>
+</head>
+<body>
+   <h2>jQuery('') 선택자는 $('') 선택자와 동일한 기능</h2>
+   
+   <h4>관심사항</h4>
+   <ul id="myFavorites">
+      <li>JSP</li>
+      <li id="servlet">Servlet</li>
+      <li>React</li>
+      <li id="jquery">JQuery</li>
+   </ul>
+</body>
+</html>

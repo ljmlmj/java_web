@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Event Examples</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// $("#btnClick") 선택자에서 값이 변경되었을 때
+		$("#btnClick").click(function() {
+			alert("btnClick 함수 호출됨");
+		});
+		
+		// $("#btnOn") 선택자가 클릭되었을 때
+		$("#btnOn").on('click', function(){
+			alert("btnOn click 함수");
+		});
+		
+		// $("inputChange") 선택자의 값이 변경되었을 때
+		$("#inputCange").on('change', function(){
+			let inputVal = $('#inputChange').val();
+			alert("on change 함수 호출됨, 변경된 값은 : " + inputVal);
+		});
+		
+		// bind()함수
+		$("#btnBind").bind("click", function(){
+			alert("bind 함수 호출됨");
+		});
+	});
+</script>
+
+</head>
+<body>
+	<input type="text" id="inputChange" placeholder=""><br>
+	<button id="btnClick">1. click() 함수!</button>
+	<button id="btnOn">2. Click me with on()</button>
+	<button id="btnBind">3. CLick me with bind()</button>
+   	
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector : 선택자/선택기/실렉터/셀렉터</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style type="text/css">
+	body {
+		color: black;
+		}
+	.yellow {
+		background-color: yellow;
+	}
+	.skyblue {
+		background-color: skyblue;
+	}
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 1. 맨 나중의 p가 중요함, ul 자손 중 li 자손 중 모든 p가 대상
+		$('ul li p').addClass('yellow');
+		
+		// 2. 맨 나중의 p가 중요함, ul 직계 자식 li의 직계 자식 중의 p가 
+		// li의 직계 자식인 p만 대상이 되며 한 단계 더 들어가면 대상 아님.
+		$('ul > li > p').addClass('skyblue');
+	});
+</script>
+</head>
+<body>
+	<h2>css 선택자 "자손"과 "자식" 차이점</h2>
+	<ul>
+		<li>
+			<p> 1. 이 문장은 다음 태그 선탁자 "ul li p" and "ul > li > p" 둘 다 적용대상임.</p>
+			<div>
+				<p> 2. 이 문장도 역시 태그 선택자 "ul li p" 적용대상. 하지만 "ul > li > p" 적용대상 아님.</p>
+			</div>
+		</li>
+		<li>
+			<p>3. 이 문장은 다음 태그 선택자 "ul li p"의 적용대상 "ul > li > p" 적용대상임</p>
+			<div>
+				<p>4. 이 문장은 다음 태그 선택자 "ul li p"의 적용대상. 하지만 "ul > li > p" 적용대상 아님.</p>
+			</div>
+		</li>
+		<p>5. 이 문장은 "ul > li > p" 아무 적용 대상 아님</p>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>테이블의 짝수번째 배경색 변경</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style type="text/css">
+.ycss {
+	background-color: yellow;
+}
+
+.scss {
+	background-color: skyblue;
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 문서에서 맨 처음 나오는 <li> 요소를 선택해서 css 적용
+		$('li:first').css('color', 'red');
+		
+		// 문서에서 가장 나중에 나오는 <li> element를 선택해서 css 적용
+		$('li:last').css('color', 'blue');
+		
+		// li 형제(sibling)들 중에서 맨 윗 자식 요소를 선택
+		$('li:first-child').css('font-weight', 'bold');
+		
+		// li 형제(sibling)들 중에서 맨 나중 자식 요소를 선택
+		$('li:last-child').css('font-weight', 'bold');
+		
+		// li 형제(sibling)들 중에서 3번째
+		$('li:nth-child(3)').css('background-color', 'yellow');
+		
+		// li 형제(sibling)들 중에서 4번쨰
+		$('li:nth-child(4)').css('background-color', 'lightblue');
+		
+		// eq(n) n번째로 일치하는 엘리먼트
+		$('li:eq(4)').css('background-color', 'red');
+		
+		
+		//li 형제(sibling)들 중에서 짝수번째 자식 요소를 선택
+		$('li:nth-child(even)').css('background-color', 'skyblue')
+			
+		//li 형제(sibling)들 중에서 홀수번째 자식 요소를 선택
+		$('li:nth-child(odd)').css('background-color', 'yellow')
+		
+	});
+</script>
+
+</head>
+<body>
+	
+	<ul>
+		<li>First item(첫번째 자식)</li>
+		<li>Second item(두번째 자식)</li>
+		<li>Third item(세번째 자식)</li>
+		<li>Fourth item(네번째 자식)</li>
+		<li>Fifth item(다섯번째 자식)</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World jQuery</title>
+
+<style type="text/css">
+	.bgcss {
+		background-color: yellow;
+		}
+	.redcss {
+		background-color: red;
+	}
+</style>
+
+<!-- jQuery 라이브러리 import -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	// 페이지의 모든 엘리먼트가 렌더링 된 후에 ready() 함수 호출됨.
+	$(document).ready(function() {
+		/* 문서의 모든 p 태그에 onclick 함수를 붙여서
+			p태그가 클릭되면 이 함수가 호출됨 */
+		/* .on('click', function(){})와 .click(function){}) 차이점
+			두 함수 모두 선택한 요소에 클릭 이벤트 핸들러를 연결하는 jQuery의
+			메소드입니다. 주요 차이점은 .on()은 모든 유형의 이벤트 핸들러를
+			연결하는 데 사용할 수 있는 보다 일반적인 메소드인 반면,
+			.click()은 특히 클릭 이벤트 핸들러를 연결하는 약식메소드라는 것이다.
+		*/
+		$("p").on("click", function(event){
+			console.log('p 태그 요소 클릭됨.', event);
+			$(this).css("color", "red");
+		});
+	
+	});
+</script>
+</head>
+<body>
+	<h2>$(function(){}); example</h2>
+	
+	<p>1. 나를 클릭하면 색깔이 변한다.</p>
+	<p>2. 나를 클릭해도 색깔이 변한다.</p>
+</body>
+</html>

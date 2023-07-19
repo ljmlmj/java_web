@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소만큼 반복해서 속성 설정 및 가져오기</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {		
+		// [1] each 메소드 설명
+		$('p').each(function(index) {
+			console.log(index + " - " + $(this).text());
+		});
+		
+		// [2] each 메소드 반복
+		// - <tbody> 아래의 직계 자식인 <tr>만 반복
+		$('table>tbody>tr').each(function(index){
+			console.log(index);
+			
+			var tr = $(this);
+			var td = tr.children();
+			var text = td.eq(0).text() + " " 
+						+ td.eq(1).text() + " " 
+						+ td.eq(2).text() + " " 
+						+ td.eq(3).text(); 
+			console.log("index : " + index + " " + text);
+		});
+	});
+	
+
+</script>
+
+</head>
+<body>
+<p>JAVA</p>
+    <p>JSP & Servlet</p>
+    <p>Spring Boot</p>
+    
+   <table border="1" id="tbl">
+      <thead>
+         <tr>
+            <th>순번</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>1</td>
+            <td>제목1</td>
+            <td>작성자1</td>
+            <td>날짜1</td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td>제목2</td>
+            <td>작성자2</td>
+            <td>날짜2</td>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td>제목3</td>
+            <td>작성자3</td>
+            <td>날짜3</td>
+         </tr>
+
+      </tbody>
+   </table>
+</body>
+</html>

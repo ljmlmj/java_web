@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>jQuery 다양한 선택자 이벤트 예제</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+      $(document).ready(function() {
+
+         // 1. submit버튼 클릭 이벤트 핸들러, input[type=submit]
+         $("input[type='submit']").on('click', function() {
+            alert("submit button 클릭됨");
+         });
+         
+         // 1.2. 일반버튼 클릭 이벤트 핸들러
+         $("#btn").on('click', function() {
+            alert("일반 button 클릭됨");
+         });
+         
+         // 2 체크박스 클릭, id 속성으로 이벤트 핸들러 구성
+           /* $("#checkbox").on('change', function() {
+            if(this.checked) {
+               alert("Checkbox 체크됨");
+            } else {
+               alert("Checkbox 체크 해제됨");
+            }
+         }); */
+         
+         // 2.1 jQuery의 $(this) 사용시
+         $("#checkbox").change(function() {
+            if ($(this).is(":checked")) {
+               alert("Checkbox 체크됨");
+            } else {
+               alert("Checkbox 체크 해제됨");
+            }
+         });
+
+         // 2.2 체크박스 클릭 이벤트 핸들러, input[type=checkbox]
+         // this : 자바스크립트에서 제공하는 this
+         /*
+         $("input[type='checkbox']").on('change', function() {
+            if(this.checked) {
+               alert("Checkbox 체크됨");
+            } else {
+               alert("Checkbox 체크 해제됨");
+            }
+         });
+          */
+
+         // [셀렉트박스, 콤보박스, 드롭다운리스트] 
+         // 콤보박스에서 중요한 것은 value 값임
+         $("select").change(function() {
+            // 1. 방법(value를 $(this) 통하여 추출)
+            let thisVal = $(this).val();
+            alert("Select value changed to($(this).val()) : " + thisVal);
+
+            // 2. 방법(value 추출)
+            let selectedVal = $("#favorites option:selected").val();
+            alert("선택된 값(value) : " + selectedVal);
+
+            // 3. 방법(text 추출)
+            let selectedText = $("#favorites option:selected").text();
+            alert("선택된 값(text) : " + selectedText);
+         });
+
+         // input[type=radio] 레디오 버튼 클릭시 발생하는 이벤트
+         $("input[type='radio']").on('change', function() {
+            alert("Radio button selected: " + $(this).val());
+         });
+
+         // input[type=text] 키보드의 키가 눌렸을 경우 발생하는 이벤트
+         $("input[type='text']").on('keyup', function() {
+            alert("Text input value changed to: " + $(this).val());
+         });
+
+      });
+   </script>
+</head>
+<body>
+   <h2>[jQuery 다양한 선택자 및 이벤트 예제] <br>
+      Html form input Element 개별 이벤트 체크</h2>
+   <br>
+   <input type="submit" value="Submit">
+   <button type="button" id="btn">일반버튼</button>
+   <br><br>
+   <input type="checkbox" id="checkbox">
+   <label for="checkbox">Check me</label>
+   <br><br>
+   <select id="favorites">
+      <option value="1">벤츠(Benz)</option>
+      <option value="2">Genesis</option>
+      <option value="3">BMW</option>
+   </select>
+   <br><br>
+   <input type="radio" name="radio" value="1" id="radio1">
+   <label for="radio1">Radio button 1</label>
+   <br>
+   <input type="radio" name="radio" value="2" id="radio2">
+   <label for="radio2">Radio button 2</label>
+   <br><br>
+   <input type="text" placeholder="Type something here">
+</body>
+</html>
