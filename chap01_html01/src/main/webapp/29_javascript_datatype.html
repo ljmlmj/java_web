@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	/*
+		javascript Data Type (자료형)
+	 	 - String
+	 	 - Number
+	 	 - Bigint
+	 	 - Boolean
+	 	 - Undefined
+	 	 - Null
+	 	 - Object(Object, Array)
+	 */
+
+	function getResult() {
+		
+		// Numbers:
+		let length = 16;
+		let weight = 7.5;
+			
+		// Strubgs:
+		let color = "Yellow";
+		let lastName = "Johnson";
+		
+		// Booleans:
+		let x = true;
+		let y = false;
+		
+		// Object:
+		const person = {
+			firstName:"John",
+			lastName:"Doe"
+		};
+		console.log('person', person);
+		
+		// Array object:
+		const cars = ["Saab", "Volvo", "BMW"];
+		console.log('cars', cars);
+		
+		let xx = 16 + "Volvo";
+		console.log('xx', xx);
+		
+		let xy = (16 + 1) + "Volvo";
+		console.log('xy', xy);
+	}
+	
+
+</script>
+<title>자바스크립트 자료형</title>
+</head>
+<body>
+
+	<!-- Html 요소에서 onclock 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="let변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="sum">결과가 표시될 자리</div>
+
+
+</body>
+</html>

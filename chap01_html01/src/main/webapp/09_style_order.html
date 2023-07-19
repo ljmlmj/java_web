@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<!-- 스타일 우선순위(Order)
+	1. 인라인 스타일 
+	2. <Head> 섹션에서 나중에 위치하는 CSS가 우선함.-->
+	
+	<!-- 외부 Style sheet 연결 -->
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- 2. 내부(내장) CSS -->
+	<style>
+		/* body : 태그 선택자 */
+		body {
+			background-color: powderblue;
+		}
+		h1 {
+			color: yellow;
+		}
+		p {
+			color: red;
+		}
+	</style>
+	
+	
+</head>
+<body>
+	
+	<!-- body 전체에는 배경색이 적용되고
+		h1에는 blue 컬러
+		p에는 빨간색이 적용됨 -->
+	<h1>This is a blue a heading</h1>
+	<div>This is a red paragraph.</div>
+	<div>This is a red paragraph.</div>
+	<p>This is a red paragraph.</p>
+	<p>This is a red paragraph.</p>
+		
+</body>
+</html>

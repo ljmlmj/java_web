@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+	function validation() {
+		// text
+		let fname = document.getElementById('fname').value;
+		let lname = documnet.getElementById('lname').value;
+		console.log('fname', fname);
+		console.log('lname', lname);
+
+		// radio button
+		var elements = document.getElementById('fav_language');
+		for (var i = 0; i < elements.length; i++) {
+			// checked 속성이 true와 같은지 비교
+			if (elements[i].checked === true) {
+				console.log(elements[i].value); // checked 된 값만 출력
+			}
+		}
+
+		// checkbox
+		// checkbox element를 찾습니다.
+		//var check1_stat = document.getElementById('vehicle1').checked;
+		//var check2_stat = document.getElementById('vehicle2').checked;
+		//var check3_stat = document.getElementById('vehicle3').checked;
+		//console.log('check1_stat', check1_stat);
+		//console.log('check2_stat', check2_stat);
+		//console.log('check3_stat', check3_stat);
+		
+		// checkbox element를 찾습니다.
+		var elements = document.getElementById('vehicle');
+		for (var i = 0; i < elements.length; i++) {
+			// checked 속성이 true와 같은지 비교
+			if (elements[i].checked === true) {
+				console.log(elements[i].value); // checked 된 값만 출력
+			}
+		}
+
+		// date value
+		var birthday = document.getElementById('birthday').value;
+		console.log('birthday', birthday);
+
+		// bdaymonth
+		var bdaymonth = document.getElementById('bdaymonth').value;
+		console.log('bdaymonth', bdaymonth);
+
+	}
+</script>
+<title>자바스크립트 자료형</title>
+</head>
+<body>
+
+	<h2>Html Input Element</h2>
+
+	<form id="inputform">
+		<!-- input type "text" -->
+		<label for="fname">First name : </label><br>
+		<input type="text" id="fname" name="fname" value="John"><br>
+		<label for="lname">Last name: </label><br>
+		<input type="text" id="lname" name="lname" value="Doe"><br><br> 
+		
+		<!-- input type "radio" -->
+		<input type="radio" id="html" name="fav_language" value="HTML">
+		<label for="html">HTML</label><br>
+		<input type="radio" id="css" name="fav_language" value="css">
+		<label for="css">CSS</label><br>
+		<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+		<label for="javascript">JavaScript</label><br><br>
+		
+		
+		<!-- input type "checkbox" -->
+		<input type="checkbox" id="vehicle1" name="vehicle" value="Bike">
+		<label for="vehicle1"> I have a bike</label><br>
+		<input type="checkbox" id="vehicle2" name="vehicle" value="Car">
+		<label for="vehicle2"> I have a car</label><br>
+		<input type="checkbox" id="vehicle3" name="vehicle" value="Boat">
+		<label for="vehicle3"> I have a boat</label><br><br>
+		
+		<!-- input type "button" -->
+		<input type="button" onclick="alert('Hello World!')" value="Clike Me!"><br><br>
+
+		<!-- input type "color" -->
+		<input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+		
+		<!-- input type = "date" -->
+		<label for="birthday">Birthday: </label>
+		<input type="date" id="birthday" name="birthday"><br><br>
+		
+		<label for="datemin">Enter a date After 1999-12-31:</label>
+		<input type="date" id="datemin" name="datemin" min="2000-01-01"><br>
+		
+		<label for="datemax">Enter a date before 1980-01-01:</label>
+		<input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+		
+		<!-- input type = "email" -->
+		<label for="email">Enter your email: </label>
+		<input type="email" id="email" name="email"><br><br>
+		
+		<!-- input type = "file" -->
+		<input type="file" id="myfile" name="myfile"><br><br>
+		
+		<!-- input type = "hidden" -->
+		hidden : <input type="hidden" id="custId" name="custId" value="3487"><br><br>
+		
+		<!-- input type = "month"-->
+		<label for="bdaymonth">Birthday (month and year):</label>
+		<input type="month" id="bdaymonth" name="bdaymonth"><br><br>
+		
+		<!-- input type = "number" -->
+		<label for="quantity">Quantity (between 1 and 5):</label>
+		<input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
+		
+		<!-- input type = "tel" -->
+		<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+		<br><br>
+		
+		<!-- input type = "submit" -->
+		<input type="submit" value="Submit">
+		
+		<!-- input type = "reset" -->
+		<input type="reset">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	/*
+		let 변수 : 범위는 {함수블럭} or {중괄호 블럭} 내부
+		 - let으로 정의된 변수는 사용하기 전에 선언해야 합니다.
+		 - 같은 범위에서 같은 이름으로 중복 선언 안됨.
+		 - 변수에 새로운 값 설정 가능
+	 */
+	function getResult() {
+		let x = 5;
+		// [오류] let은 같은 범위에서 같은 이름으로 변수 선언 불가.
+		//let x = 10; (사용불가)
+		{
+			let x = 10; // 바깥의 x와는 다른 변수
+			let y = 15; // y의 인식 범위는 중괄호 블럭 내부
+			console.log(x);
+			console.log(y);
+		}
+		console.log(x);	// x = 5
+		//console.log(y);	// [오류] y는 {중괄호블럭} 내부에서만 인식가능
+		document.getElementById('demo').innerHTML = x;
+		
+		//carName = "Benz"; //[오류] 초기화안되서 접근 자체가 안됨.
+		let carName = "Volvo";	// 호이스팅 되어 맨 위로 올라가지만 초기화는 안됨.(사용불가)
+		carName = "Benz";	// 위에서 선언을 했기 때문에 사용 가능
+	}
+</script>
+<title>자바스크립트 변수 let</title>
+</head>
+<body>
+
+	<!-- Html 요소에서 onclock 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="let변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="demo">결과가 표시될 자리</div>
+
+</body>
+</html>

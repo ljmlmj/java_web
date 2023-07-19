@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	function showTime() {
+		document.getElementById('demo').innerHTML = Date();
+	}
+</script>
+</head>
+<body>
+
+	<!-- Html 요소에서 onclock 이벤트 함수 연결 -->
+	<input type="button" onclick="showTime()" value="시간보기">
+
+	<!-- id 속성 -->
+	<div id="demo">시간이 표시될 자리</div>
+
+</body>
+</html>

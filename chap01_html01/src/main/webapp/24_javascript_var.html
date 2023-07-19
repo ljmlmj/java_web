@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	/*
+		자바스크립트 함수에서 var 변수 선언하면 함수 맨 위로 호이스팅(올려짐)
+		그렇게 위로 올려진 변수는 undefined로 초기화됨.
+	 */
+	function getResult() {
+		//var x = undefined;
+		
+		// 2. x변수는 함수의 맨 윗 부분으로 올려지며 undefined로 초기화
+		// console.log(변수) : 브라우저에서 자바스크립트 변수 값 출력해줌.
+		// (디버깅용도)
+		var x = 5;		// 변수 선언
+		var x = 10;		// 여러번 선언할 수 있다. (단점)
+		console.log(x);
+		document.getElementById('demo').innerHTML = x;
+	}
+</script>
+<title>자바스크립트 변수 var</title>
+
+</head>
+<body>
+
+	<!-- Html 요소에서 onclock 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="var변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="demo">결과가 표시될 자리</div>
+
+</body>
+</html>

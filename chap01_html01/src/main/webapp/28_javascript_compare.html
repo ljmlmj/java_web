@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	/*
+		=== 연산자
+		 - 비교하는 양쪽의 타입(자료형)까지 비교 대상에 포함
+		 - 양쪽 타입이 다르면 무조건 false
+		 - 
+	 */
+
+	// getResult 함수 선언문
+	function getResult() {
+		// 0과 == false는 같음
+		console.log(0 == false);	// true
+		console.log(typeof 0);		// true
+		console.log(typeof 0);		// true
+		// 0과 false는 같지 않음
+		console.log(0 === false); 	// false
+		console.log(typeof 0); 		// false
+		console.log(typeof false); 	// false
+		
+		// 2와 == "2"는 같지 않음
+		console.log(2 === "2");		// true
+		consolt.log(typeof 2);		// false
+		consolt.log(typeof "2");	// false
+	}
+
+</script>
+<title>자바스크립트 (Strict Equal Operator)</title>
+</head>
+<body>
+
+	<!-- Html 요소에서 onclock 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="let변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="sum">결과가 표시될 자리</div>
+
+
+</body>
+</html>

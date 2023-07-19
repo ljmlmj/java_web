@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+	function getSelectedValue() {
+		
+		var selectElement = document.getElementById("select");
+		var selectedValue = selectElement.value;
+		
+		console.log('선택된 과일', selectedValue);
+		alert("선택된 과일은 : " + selectedValue + " 입니다.");
+
+	}
+</script>
+<title>Select Option</title>
+</head>
+<body>
+
+	<h2>Html Input Element</h2>
+
+	<label for="select">과일 선택:</label>
+
+	<select id="select" name="fruit">
+		<option value="apple">사과</option>
+		<option value="banana">바나나</option>
+		<option value="orange">오렌지</option>
+	</select>
+	<button onclick="getSelectedValue()">선택된 과일 얻기</button>
+
+	<form id="inputform">
+		<!-- input type "text" -->
+		
+	</form>
+
+</body>
+</html>

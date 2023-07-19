@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+	function insert() {
+		alert('여기는 insert함수');
+		let fname = document.getElementById('fname').value;
+		console.log('이름', fname);
+	}
+</script>
+<title>자바스크립트 자료형</title>
+</head>
+<body>
+
+	<h2>Html Input Element</h2>
+
+	<form id="inputform">
+		<label for="fname">성명 : </label> <br> <input type="text"
+			id="fname" name="fname"> <br>
+		<button type="button" onclick="insert()">추가</button>
+	</form>
+
+</body>
+</html>
